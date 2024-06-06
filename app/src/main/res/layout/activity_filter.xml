@@ -9,7 +9,7 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/foodType"
-        android:layout_width="333dp"
+        android:layout_width="340dp"
         android:layout_height="57dp"
         android:hint="Food Type"
         app:layout_constraintBottom_toTopOf="@+id/radius"
@@ -21,22 +21,18 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/textInputFoodType"
-            android:layout_width="315dp"
-            android:layout_height="48dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.517" />
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14sp" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/radius"
-        android:layout_width="333dp"
+        android:layout_width="340dp"
         android:layout_height="57dp"
         android:hint="Radius"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/submit"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -45,9 +41,21 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/textInputRadius"
-            android:layout_width="315dp"
-            android:layout_height="48dp"
-            android:layout_marginBottom="228dp" />
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14sp" />
     </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/submit"
+        style="?attr/materialButtonOutlinedStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radius" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

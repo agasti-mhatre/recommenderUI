@@ -11,6 +11,8 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.google.android.material.textfield.TextInputEditText;
 
+import org.chromium.net.CronetEngine;
+
 public class Filter extends AppCompatActivity {
 
     private TextInputEditText textInputFoodType;
@@ -43,6 +45,10 @@ public class Filter extends AppCompatActivity {
     }
 
     private Button initSubmit(TextInputEditText... editTexts) {
+
+        //fix this
+        CronetEngine.Builder myBuilder = new CronetEngine.Builder(Filter.this);
+
 
         return findViewById(R.id.submit);
     }

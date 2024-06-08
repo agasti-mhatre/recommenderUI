@@ -1,6 +1,7 @@
 package recommender.recommenderui.Filter;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
@@ -11,7 +12,13 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.google.android.material.textfield.TextInputEditText;
 
+import java.io.IOException;
+
+import okhttp3.Call;
+import okhttp3.Callback;
 import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
 import recommender.recommenderui.R;
 
 public class Filter extends AppCompatActivity {
@@ -47,7 +54,35 @@ public class Filter extends AppCompatActivity {
 
     private Button initSubmit(TextInputEditText... editTexts) {
 
-        OkHttpClient temp = new OkHttpClient();
+        //TEMP
+        String url = "https://jsonplaceholder.typicode.com/posts";
+
+        // Create OkHttpClient instance
+        OkHttpClient client = new OkHttpClient();
+
+        // Create a request
+        Request request = new Request.Builder()
+                .url(url)
+                .build();
+
+        // Make an asynchronous GET request
+        client.newCall(request).enqueue(new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+                Log.d("Network request failed", e.toString());
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+                if (!response.isSuccessful()) {
+                    Log.d("Unexpected code ", response.toString());
+                } else {
+                    String responseData = response.body() != null ? response.body().string() : "No response data";
+                    Log.d("Response: ", responseData);
+                }
+            }
+        });
+        //TEMP
 
         Button currSubmit = findViewById(R.id.submit);
 

@@ -13,6 +13,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.RecommenderUI"
+        android:networkSecurityConfig="@xml/temp_localhost_access"
         tools:targetApi="31">
         <activity
             android:name=".Filter.Filter"

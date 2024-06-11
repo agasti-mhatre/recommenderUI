@@ -55,7 +55,7 @@ public class Filter extends AppCompatActivity {
     private Button initSubmit(TextInputEditText... editTexts) {
 
         //TEMP
-        String url = "https://jsonplaceholder.typicode.com/posts";
+        String url = "http://3.128.31.177:8080/test";
 
         // Create OkHttpClient instance
         OkHttpClient client = new OkHttpClient();

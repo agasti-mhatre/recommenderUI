@@ -54,6 +54,7 @@ public class Filter extends AppCompatActivity {
 
     private Button initSubmit(TextInputEditText... editTexts) {
 
+        /*
         //TEMP
         String url = "http://3.128.31.177:8080/test";
 
@@ -83,7 +84,7 @@ public class Filter extends AppCompatActivity {
             }
         });
         //TEMP
-
+        */
         Button currSubmit = findViewById(R.id.submit);
 
 

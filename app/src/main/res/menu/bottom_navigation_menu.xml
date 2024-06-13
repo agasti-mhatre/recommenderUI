@@ -6,8 +6,15 @@
         android:enabled="true"
         android:icon="@drawable/restaurant"
         android:title="Search"/>
+
     <item
         android:id="@+id/page_2"
+        android:enabled="true"
+        android:icon="@drawable/list"
+        android:title="Your Lists"/>
+
+    <item
+        android:id="@+id/page_3"
         android:enabled="true"
         android:icon="@drawable/account"
         android:title="Profile"/>

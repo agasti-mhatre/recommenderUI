@@ -1,7 +1,6 @@
 package recommender.recommenderui.Filter;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
@@ -12,16 +11,9 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.google.android.material.textfield.TextInputEditText;
 
-import java.io.IOException;
-
-import okhttp3.Call;
-import okhttp3.Callback;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.Response;
 import recommender.recommenderui.R;
 
-public class Filter extends AppCompatActivity {
+public class FilterTemp extends AppCompatActivity {
 
     private TextInputEditText textInputFoodType;
     private TextInputEditText textInputRadius;

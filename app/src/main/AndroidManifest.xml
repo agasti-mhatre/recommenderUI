@@ -16,7 +16,7 @@
         android:networkSecurityConfig="@xml/temp_localhost_access"
         tools:targetApi="31">
         <activity
-            android:name=".Filter.Filter"
+            android:name=".Filter.FilterTemp"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

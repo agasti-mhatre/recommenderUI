@@ -31,20 +31,23 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
-        toolbar = initToolbar();
+        toolbar = initToolbar(savedInstanceState);
     }
 
-    private BottomNavigationView initToolbar() {
+    private BottomNavigationView initToolbar(Bundle savedInstanceState) {
 
         BottomNavigationView tempToolBar = findViewById(R.id.toolbar);
 
-        NavigationBarView.OnItemSelectedListener navBarListener = initNavBarListener();
-        tempToolBar.setOnItemSelectedListener(navBarListener);
+        tempToolBar.setOnItemSelectedListener(initNavBarListener(savedInstanceState));
+
+        if (savedInstanceState == null) {
+            tempToolBar.setSelectedItemId(R.id.yourLists);
+        }
 
         return tempToolBar;
     }
 
-    private NavigationBarView.OnItemSelectedListener initNavBarListener() {
+    private NavigationBarView.OnItemSelectedListener initNavBarListener(Bundle savedInstanceState) {
         return new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
@@ -53,7 +56,9 @@ public class MainActivity extends AppCompatActivity {
                 int id = menuItem.getItemId();
                 if (id == R.id.yourLists) {
 
+
                     itemClicked = true;
+
                 } else if (id == R.id.profile) {
 
                     itemClicked = true;

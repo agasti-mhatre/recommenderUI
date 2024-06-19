@@ -1,4 +1,4 @@
-package recommender.recommenderui.lists;
+package recommender.recommenderui.view.lists;
 
 import android.os.Bundle;
 
@@ -11,14 +11,14 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import recommender.recommenderui.R;
-import recommender.recommenderui.lists.recycler.ListRecyclerAdapter;
+import recommender.recommenderui.view.lists.recycler.ListRecyclerAdapter;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link ListsFragment#newInstance} factory method to
+ * Use the {@link ListsDisplayFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class ListsFragment extends Fragment {
+public class ListsDisplayFragment extends Fragment {
 
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -27,7 +27,7 @@ public class ListsFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public ListsFragment() {
+    public ListsDisplayFragment() {
         // Required empty public constructor
     }
 
@@ -39,8 +39,8 @@ public class ListsFragment extends Fragment {
      * @param param2 Parameter 2.
      * @return A new instance of fragment ListsFragment.
      */
-    public static ListsFragment newInstance(String param1, String param2) {
-        ListsFragment fragment = new ListsFragment();
+    public static ListsDisplayFragment newInstance(String param1, String param2) {
+        ListsDisplayFragment fragment = new ListsDisplayFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -64,7 +64,7 @@ public class ListsFragment extends Fragment {
 
         View thisFragment = inflater.inflate(R.layout.fragment_lists, container, false);
 
-        RecyclerView list = thisFragment.findViewById(R.id.list);
+        RecyclerView list = thisFragment.findViewById(R.id.listOfLists);
         list.setLayoutManager(new LinearLayoutManager(getContext()));
         list.setAdapter(new ListRecyclerAdapter());
 

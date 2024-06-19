@@ -1,4 +1,4 @@
-package recommender.recommenderui.lists.recycler;
+package recommender.recommenderui.view.lists.recycler;
 
 
 import android.view.LayoutInflater;
@@ -18,7 +18,6 @@ public class ListRecyclerAdapter extends RecyclerView.Adapter<ListItemHolder> {
 
     public ListRecyclerAdapter() {
         allRestaurants = new ArrayList();
-        allRestaurants.add("Temp");
     }
 
     @NonNull

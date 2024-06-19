@@ -1,4 +1,4 @@
-package recommender.recommenderui.lists.recycler;
+package recommender.recommenderui.view.lists.recycler;
 
 import android.view.View;
 import android.widget.TextView;
@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import recommender.recommenderui.R;
 
-public class ListItemHolder extends RecyclerView.ViewHolder {
+public class ListItemHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
     private final TextView restaurantName;
 
@@ -22,4 +22,8 @@ public class ListItemHolder extends RecyclerView.ViewHolder {
         restaurantName.setText(name);
     }
 
+    @Override
+    public void onClick(View v) {
+
+    }
 }

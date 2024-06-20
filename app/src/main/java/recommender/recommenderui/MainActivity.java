@@ -1,6 +1,4 @@
 package recommender.recommenderui;
-
-
 import android.os.Bundle;
 import android.view.MenuItem;
 
@@ -10,13 +8,18 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.fragment.app.Fragment;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
+import recommender.recommenderui.view.lists.ListsDisplayFragment;
+
 
 public class MainActivity extends AppCompatActivity {
 
+    private Fragment listsDisplayFragment;
+    private Fragment profileFragment;
     private BottomNavigationView toolbar;
 
     @Override
@@ -32,8 +35,8 @@ public class MainActivity extends AppCompatActivity {
         });
 
         toolbar = initToolbar(savedInstanceState);
-
-
+        listsDisplayFragment = new ListsDisplayFragment();
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainerView, listsDisplayFragment).commit();
     }
 
     private BottomNavigationView initToolbar(Bundle savedInstanceState) {

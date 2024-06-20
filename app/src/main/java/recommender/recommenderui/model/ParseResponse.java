@@ -1,8 +1,8 @@
 package recommender.recommenderui.model;
 
-import java.util.List;
+import java.util.Map;
 
-public interface ParseResponse<T> {
+public interface ParseResponse<T, U> {
 
-    public List<T> getParsedResponse();
+    public Map<T, U> getParsedResponse();
 }

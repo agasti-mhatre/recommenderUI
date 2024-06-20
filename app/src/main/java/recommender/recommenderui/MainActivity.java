@@ -32,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
         });
 
         toolbar = initToolbar(savedInstanceState);
+
+
     }
 
     private BottomNavigationView initToolbar(Bundle savedInstanceState) {

@@ -1,23 +1,22 @@
 package recommender.recommenderui.view.lists.recycler;
 
-
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Map;
 
 import recommender.recommenderui.R;
+import recommender.recommenderui.controller.view.ListProperties;
 
 public class ListRecyclerAdapter extends RecyclerView.Adapter<ListItemHolder> {
 
-    private final List<String> allRestaurants;
+    private final Map<Integer, ListProperties> allRestaurants;
 
-    public ListRecyclerAdapter() {
-        allRestaurants = new ArrayList();
+    public ListRecyclerAdapter(Map<Integer, ListProperties> listProperties) {
+        allRestaurants = listProperties;
     }
 
     @NonNull
@@ -32,7 +31,7 @@ public class ListRecyclerAdapter extends RecyclerView.Adapter<ListItemHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull ListItemHolder holder, int position) {
-        holder.setText(allRestaurants.get(position));
+        holder.setText(allRestaurants.get(position).getListName());
     }
 
     @Override

@@ -34,9 +34,10 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
-        toolbar = initToolbar(savedInstanceState);
         listsDisplayFragment = new ListsDisplayFragment();
-        getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainerView, listsDisplayFragment).commit();
+        displayFragment(R.id.fragmentContainerView, listsDisplayFragment);
+
+        toolbar = initToolbar(savedInstanceState);
     }
 
     private BottomNavigationView initToolbar(Bundle savedInstanceState) {
@@ -61,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
                 int id = menuItem.getItemId();
                 if (id == R.id.yourLists) {
 
-
+                    displayFragment(R.id.fragmentContainerView, listsDisplayFragment);
                     itemClicked = true;
 
                 } else if (id == R.id.profile) {
@@ -72,6 +73,10 @@ public class MainActivity extends AppCompatActivity {
                 return itemClicked;
             }
         };
+    }
+
+    private void displayFragment(int containerID, Fragment fragment) {
+        getSupportFragmentManager().beginTransaction().replace(containerID, fragment).commit();
     }
 
 }

@@ -1,13 +1,11 @@
 package recommender.recommenderui.model;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import recommender.recommenderui.controller.view.ListProperties;
 
-public class ParseIntoUserProperties implements ParseResponse<Integer, ListProperties>{
+public class ParseIntoListProperties implements ParseResponse<Integer, ListProperties>{
 
     /**
      * TEMP ---

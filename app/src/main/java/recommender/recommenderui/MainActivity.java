@@ -13,7 +13,7 @@ import androidx.fragment.app.Fragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
-import recommender.recommenderui.view.lists.ListsDisplayFragment;
+import recommender.recommenderui.view.lists.fragments.ListsDisplayFragment;
 
 
 public class MainActivity extends AppCompatActivity {

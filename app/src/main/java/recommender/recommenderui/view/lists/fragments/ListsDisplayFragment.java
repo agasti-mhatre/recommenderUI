@@ -1,4 +1,4 @@
-package recommender.recommenderui.view.lists;
+package recommender.recommenderui.view.lists.fragments;
 
 import android.os.Bundle;
 
@@ -11,7 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import recommender.recommenderui.R;
-import recommender.recommenderui.controller.view.GetUserProperties;
+import recommender.recommenderui.controller.view.GetListProperties;
 import recommender.recommenderui.view.lists.recycler.ListRecyclerAdapter;
 
 /**
@@ -67,7 +67,7 @@ public class ListsDisplayFragment extends Fragment {
 
         RecyclerView list = thisFragment.findViewById(R.id.listOfLists);
         list.setLayoutManager(new LinearLayoutManager(getContext()));
-        list.setAdapter(new ListRecyclerAdapter((new GetUserProperties()).getLists()));
+        list.setAdapter(new ListRecyclerAdapter((new GetListProperties()).getLists()));
 
         return thisFragment;
     }

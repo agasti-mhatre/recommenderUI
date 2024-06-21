@@ -35,8 +35,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
         listsDisplayFragment = new ListsDisplayFragment();
-        displayFragment(R.id.fragmentContainerView, listsDisplayFragment);
-
         toolbar = initToolbar(savedInstanceState);
     }
 

@@ -4,26 +4,44 @@ import android.view.View;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import recommender.recommenderui.MainActivity;
 import recommender.recommenderui.R;
 
-public class ListItemHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+public class ListItemHolder extends RecyclerView.ViewHolder {
 
-    private final TextView restaurantName;
+    private final CardView foodTypeHolder;
+    private final TextView foodType;
 
-    public ListItemHolder(@NonNull View restaurantName) {
+    public ListItemHolder(@NonNull View foodTypeContainer) {
 
-        super(restaurantName);
-        this.restaurantName = restaurantName.findViewById(R.id.restaurant_name);
+        super(foodTypeContainer);
+
+        foodTypeHolder = setFoodTypeHolder(foodTypeContainer);
+        foodType = foodTypeContainer.findViewById(R.id.restaurant_name);
     }
 
     public void setText(String name) {
-        restaurantName.setText(name);
+        foodType.setText(name);
     }
 
-    @Override
-    public void onClick(View v) {
+    private CardView setFoodTypeHolder(View foodTypeContainer) {
 
+        CardView temp = foodTypeContainer.findViewById(R.id.restaurantNameHolder);
+
+        temp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                MainActivity mainActivity = (MainActivity) v.getContext();
+                mainActivity.getSupportFragmentManager();
+            }
+        });
+
+        return temp;
     }
+
 }

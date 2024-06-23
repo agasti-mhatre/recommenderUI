@@ -1,6 +1,7 @@
 package recommender.recommenderui.view.lists.activity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 
@@ -11,6 +12,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import recommender.recommenderui.R;
+import recommender.recommenderui.controller.view.ListProperties;
 
 public class ListContentActivity extends AppCompatActivity {
 
@@ -28,6 +30,11 @@ public class ListContentActivity extends AppCompatActivity {
         });
 
         backButton = setBackButton();
+
+        ListProperties listProperties = getIntent().getParcelableExtra("ListProperties");
+        for (int i = 0; i < listProperties.getEatery().size(); i += 1) {
+            Log.v("Eatery: ", listProperties.getEatery().get(i).get(i));
+        }
     }
 
     private ImageButton setBackButton() {

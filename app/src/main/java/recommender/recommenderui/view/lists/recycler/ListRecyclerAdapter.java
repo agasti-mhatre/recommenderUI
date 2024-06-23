@@ -32,6 +32,7 @@ public class ListRecyclerAdapter extends RecyclerView.Adapter<ListItemHolder> {
     @Override
     public void onBindViewHolder(@NonNull ListItemHolder holder, int position) {
         holder.setText(allRestaurants.get(position).getListName());
+        holder.setListProperties(allRestaurants.get(position));
     }
 
     @Override

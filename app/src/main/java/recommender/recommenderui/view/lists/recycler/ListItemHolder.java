@@ -1,16 +1,12 @@
 package recommender.recommenderui.view.lists.recycler;
 
 import android.content.Intent;
-import android.os.Parcelable;
 import android.view.View;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
-
-import java.util.List;
-import java.util.Map;
 
 import recommender.recommenderui.MainActivity;
 import recommender.recommenderui.R;
@@ -28,7 +24,7 @@ public class ListItemHolder extends RecyclerView.ViewHolder {
         super(foodTypeContainer);
 
         foodTypeHolder = setFoodTypeHolder(foodTypeContainer);
-        foodType = foodTypeContainer.findViewById(R.id.restaurant_name);
+        foodType = foodTypeContainer.findViewById(R.id.listName);
     }
 
     public void setText(String name) {
@@ -41,7 +37,7 @@ public class ListItemHolder extends RecyclerView.ViewHolder {
 
     private CardView setFoodTypeHolder(View foodTypeContainer) {
 
-        CardView temp = foodTypeContainer.findViewById(R.id.restaurantNameHolder);
+        CardView temp = foodTypeContainer.findViewById(R.id.listNameHolder);
         temp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

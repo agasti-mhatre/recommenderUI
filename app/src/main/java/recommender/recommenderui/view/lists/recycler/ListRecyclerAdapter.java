@@ -25,7 +25,7 @@ public class ListRecyclerAdapter extends RecyclerView.Adapter<ListItemHolder> {
         return new ListItemHolder(
                 LayoutInflater.from(
                         parent.getContext()
-                ).inflate(R.layout.restaurant_name_item, parent, false)
+                ).inflate(R.layout.list_item_holder, parent, false)
         );
     }
 

@@ -1,7 +1,6 @@
 package recommender.recommenderui.view.lists.activity;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 
@@ -10,9 +9,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import recommender.recommenderui.R;
 import recommender.recommenderui.controller.view.ListProperties;
+import recommender.recommenderui.view.lists.recycler.EateryRecyclerAdapter;
 
 public class ListContentActivity extends AppCompatActivity {
 
@@ -31,10 +33,8 @@ public class ListContentActivity extends AppCompatActivity {
 
         backButton = setBackButton();
 
-        ListProperties listProperties = getIntent().getParcelableExtra("ListProperties");
-        for (int i = 0; i < listProperties.getEatery().size(); i += 1) {
-            Log.v("Eatery: ", listProperties.getEatery().get(i));
-        }
+        RecyclerView eateryList = setEateryList(getIntent().getParcelableExtra("ListProperties"));
+
     }
 
     private ImageButton setBackButton() {
@@ -46,6 +46,16 @@ public class ListContentActivity extends AppCompatActivity {
                 finish();
             }
         });
+        return temp;
+    }
+
+    private RecyclerView setEateryList(ListProperties listProperties) {
+
+        RecyclerView temp = findViewById(R.id.eateryRank);
+
+        temp.setLayoutManager(new LinearLayoutManager(ListContentActivity.this));
+        temp.setAdapter(new EateryRecyclerAdapter(listProperties));
+
         return temp;
     }
 }

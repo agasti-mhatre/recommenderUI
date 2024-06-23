@@ -16,6 +16,9 @@
         android:theme="@style/Theme.RecommenderUI"
         tools:targetApi="31">
         <activity
+            android:name=".view.lists.recycler.EateryHolder"
+            android:exported="false" />
+        <activity
             android:name=".view.lists.activity.ListContentActivity"
             android:exported="false" />
         <activity

@@ -5,17 +5,15 @@ import android.os.Parcelable;
 
 import androidx.annotation.NonNull;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class ListProperties implements Parcelable {
 
     private final String listName;
-    private final List<Map<Integer, String>> eatery;
+    private final Map<Integer, String> eatery;
 
-    public ListProperties(String listName, List<Map<Integer, String>> eatery) {
+    public ListProperties(String listName, Map<Integer, String> eatery) {
 
         this.listName = listName;
         this.eatery = eatery;
@@ -25,21 +23,17 @@ public class ListProperties implements Parcelable {
         return listName;
     }
 
-    public List<Map<Integer, String>> getEatery() {
+    public Map<Integer, String> getEatery() {
         return eatery;
     }
 
     protected ListProperties(Parcel in) {
         listName = in.readString();
 
-        eatery = new ArrayList<Map<Integer, String>>();
-
         int numMaps = in.readInt();
-        Map<Integer, String> temp = new HashMap<Integer, String>();
+        this.eatery = new HashMap<Integer, String>();
         for (int i = 0; i < numMaps; i += 1) {
-
-            in.readMap(temp, Map.class.getClassLoader());
-            eatery.add(temp);
+            eatery.put(i, in.readString());
         }
     }
 
@@ -68,7 +62,7 @@ public class ListProperties implements Parcelable {
         int numMaps = eatery.size();
         dest.writeInt(numMaps);
         for (int i = 0; i < numMaps; i += 1) {
-            dest.writeMap(eatery.get(i));
+            dest.writeString(eatery.get(i));
         }
     }
 }

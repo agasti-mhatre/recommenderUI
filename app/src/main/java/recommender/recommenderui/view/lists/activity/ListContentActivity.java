@@ -33,7 +33,7 @@ public class ListContentActivity extends AppCompatActivity {
 
         ListProperties listProperties = getIntent().getParcelableExtra("ListProperties");
         for (int i = 0; i < listProperties.getEatery().size(); i += 1) {
-            Log.v("Eatery: ", listProperties.getEatery().get(i).get(i));
+            Log.v("Eatery: ", listProperties.getEatery().get(i));
         }
     }
 

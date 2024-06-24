@@ -8,6 +8,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import recommender.recommenderui.R;
 
+/**
+ * Holder for the EateryRecyclerAdapter. Hold
+ * the contents of each list's item.
+ */
 public class EateryHolder extends RecyclerView.ViewHolder {
 
     private TextView restaurant_name;

@@ -9,10 +9,19 @@ import androidx.recyclerview.widget.RecyclerView;
 import recommender.recommenderui.R;
 import recommender.recommenderui.controller.view.ListProperties;
 
+/**
+ * Recycler for each list's contents. Each list will contain a number
+ * of eateries which should be cycled through via this adapter.
+ */
 public class EateryRecyclerAdapter extends RecyclerView.Adapter<EateryHolder>{
 
     private final ListProperties listProperties;
 
+    /**
+     * Initialize the object with the properties of the list
+     *
+     * @param listProperties
+     */
     public EateryRecyclerAdapter(ListProperties listProperties) {
         this.listProperties = listProperties;
     }

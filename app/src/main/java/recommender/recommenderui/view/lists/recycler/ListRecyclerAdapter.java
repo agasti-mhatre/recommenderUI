@@ -11,12 +11,22 @@ import java.util.Map;
 import recommender.recommenderui.R;
 import recommender.recommenderui.controller.view.ListProperties;
 
+/**
+ * Used to display all of the lists created and saved by the user.
+ */
 public class ListRecyclerAdapter extends RecyclerView.Adapter<ListItemHolder> {
 
-    private final Map<Integer, ListProperties> allRestaurants;
+    private final Map<Integer, ListProperties> allLists;
 
-    public ListRecyclerAdapter(Map<Integer, ListProperties> listProperties) {
-        allRestaurants = listProperties;
+    /**
+     * Initialize the recycler view with all of the lists that need
+     * to be displayed.
+     * 
+     * @param allLists - The position (Integer) and list contents for
+     *                 each list.
+     */
+    public ListRecyclerAdapter(Map<Integer, ListProperties> allLists) {
+        this.allLists = allLists;
     }
 
     @NonNull
@@ -31,12 +41,12 @@ public class ListRecyclerAdapter extends RecyclerView.Adapter<ListItemHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull ListItemHolder holder, int position) {
-        holder.setText(allRestaurants.get(position).getListName());
-        holder.setListProperties(allRestaurants.get(position));
+        holder.setText(allLists.get(position).getListName());
+        holder.setListProperties(allLists.get(position));
     }
 
     @Override
     public int getItemCount() {
-        return allRestaurants.size();
+        return allLists.size();
     }
 }

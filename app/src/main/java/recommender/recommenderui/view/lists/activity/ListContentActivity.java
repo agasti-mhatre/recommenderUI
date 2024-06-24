@@ -16,6 +16,9 @@ import recommender.recommenderui.R;
 import recommender.recommenderui.controller.view.ListProperties;
 import recommender.recommenderui.view.lists.recycler.EateryRecyclerAdapter;
 
+/**
+ * Used to display the contents of each list.
+ */
 public class ListContentActivity extends AppCompatActivity {
 
     private ImageButton backButton;

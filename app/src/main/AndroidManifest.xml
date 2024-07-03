@@ -34,9 +34,6 @@
             android:name=".view.lists.activity.ListContentActivity"
             android:exported="false" />
         <activity
-            android:name=".Filter.FilterTemp"
-            android:exported="false" />
-        <activity
             android:name=".MainActivity"
             android:exported="false" />
     </application>

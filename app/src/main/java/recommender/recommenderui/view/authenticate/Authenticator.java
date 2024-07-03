@@ -47,7 +47,7 @@ public class Authenticator extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-
+                startActivity(new Intent(Authenticator.this, NewAccount.class));
             }
         });
 

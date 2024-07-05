@@ -49,11 +49,24 @@ public class NewAccount extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                CreateUser.createAccount();
+                String firstNameText = firstName.getText().toString();
+                if (!firstNameText.matches(getFirstNameRegex())) {
+                }
+                //Do it for the other fields as well
+
+                String lastNameText = lastName.getText().toString();
+                String emailText = email.getText().toString();
+
+                CreateUser.createAccount(firstNameText, lastNameText, emailText);
             }
         });
 
         return temp;
+    }
+
+    private String getFirstNameRegex() {
+
+        return "[a-zA-Z\\-]";
     }
 
 }

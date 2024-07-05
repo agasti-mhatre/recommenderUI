@@ -14,6 +14,7 @@ import androidx.core.view.WindowInsetsCompat;
 import com.google.android.material.textfield.TextInputEditText;
 
 import recommender.recommenderui.R;
+import recommender.recommenderui.controller.backend.CreateUser;
 
 public class NewAccount extends AppCompatActivity {
 
@@ -48,15 +49,11 @@ public class NewAccount extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                sendAccountToBackend();
+                CreateUser.createAccount();
             }
         });
 
         return temp;
-    }
-
-    private void sendAccountToBackend() {
-
     }
 
 }

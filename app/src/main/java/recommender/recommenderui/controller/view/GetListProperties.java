@@ -2,7 +2,7 @@ package recommender.recommenderui.controller.view;
 
 import java.util.Map;
 
-import recommender.recommenderui.controller.backend.BackendQueryController;
+import recommender.recommenderui.controller.backend.ListRetrievalQuery;
 
 /**
  * Retrieve the list properties from a controller. This part communicates
@@ -11,6 +11,6 @@ import recommender.recommenderui.controller.backend.BackendQueryController;
 public class GetListProperties implements ViewController<Integer, ListProperties> {
     @Override
     public Map<Integer, ListProperties> getLists() {
-        return new BackendQueryController().getLists();
+        return new ListRetrievalQuery().getLists();
     }
 }

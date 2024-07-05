@@ -6,7 +6,7 @@ import recommender.recommenderui.model.ParseIntoListProperties;
 import recommender.recommenderui.model.ParseResponse;
 import recommender.recommenderui.controller.view.ListProperties;
 
-public class BackendQueryController implements ListRetrievalController<Integer, ListProperties> {
+public class ListRetrievalQuery implements ListRetrievalController<Integer, ListProperties> {
 
     /**
      * TEMP ---

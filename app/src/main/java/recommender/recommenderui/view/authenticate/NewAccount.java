@@ -57,7 +57,8 @@ public class NewAccount extends AppCompatActivity {
                 String lastNameText = lastName.getText().toString();
                 String emailText = email.getText().toString();
 
-                CreateUser.createAccount(firstNameText, lastNameText, emailText);
+                CreateUser.createAccount(firstNameText, lastNameText, emailText, getFilesDir());
+
             }
         });
 

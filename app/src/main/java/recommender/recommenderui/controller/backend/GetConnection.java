@@ -1,7 +1,5 @@
 package recommender.recommenderui.controller.backend;
 
-import android.util.Log;
-
 public class GetConnection {
 
     private final StringBuilder backendConn;

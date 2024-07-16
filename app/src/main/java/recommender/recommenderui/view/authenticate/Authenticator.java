@@ -19,9 +19,6 @@ public class Authenticator extends AppCompatActivity {
 
     private TextView createAccount;
 
-
-    private Button goToMain;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,7 +32,11 @@ public class Authenticator extends AppCompatActivity {
 
         createAccount = initCreateAccount();
 
-        goToMain = tempInitializer();
+        // Change this with a check: If the user has a valid token, proceed to Main, otherwise remain on authentication page
+        if(true) {
+
+            startActivity(new Intent(Authenticator.this, MainActivity.class));
+        }
     }
 
     private TextView initCreateAccount() {
@@ -54,17 +55,4 @@ public class Authenticator extends AppCompatActivity {
         return temp;
     }
 
-    private Button tempInitializer() {
-
-        Button temp = findViewById(R.id.temp);
-
-        temp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(Authenticator.this, MainActivity.class));
-            }
-        });
-
-        return temp;
-    }
 }

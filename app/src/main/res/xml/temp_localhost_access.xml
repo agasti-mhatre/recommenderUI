@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<network-security-config>
-    <domain-config cleartextTrafficPermitted="true">
-        <domain includeSubdomains="true">https://mock_2ac51dc284594e8c826df391f9239df8.mock.insomnia.rest</domain>
-    </domain-config>
-</network-security-config>

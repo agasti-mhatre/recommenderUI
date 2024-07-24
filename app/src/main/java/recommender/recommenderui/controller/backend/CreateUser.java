@@ -20,24 +20,31 @@ public class CreateUser {
 
     public static void createAccount(String firstName, String lastName, String email, File currFileDirectory) {
 
+        Runnable tempRunnable = createRunnable(currFileDirectory);
+
+        Thread tempThread = new Thread(tempRunnable);
+        tempThread.start();
+
+    }
+
+    private static Runnable createRunnable(File currFileDirectory) {
+
         OkHttpClient client = new OkHttpClient();
 
-        String tempUrl = new GetConnection().createNewAccount();
-        Request getAccount = new Request.Builder().url(tempUrl).get().build();
+        String accountCreateUrl = new GetConnection().createNewAccount();
+        Request getAccount = new Request.Builder()
+                .url(accountCreateUrl)
+                .get()
+                .build();
 
         File tokenFile = new File(currFileDirectory, GetSystemFile.tokenFile());
-
-        Runnable tempRunnable = new Runnable() {
+        return new Runnable() {
             @Override
             public void run() {
 
                 client.newCall(getAccount).enqueue(getCallback(tokenFile));
             }
         };
-
-        Thread tempThread = new Thread(tempRunnable);
-        tempThread.start();
-
     }
 
     private static Callback getCallback(File tokenFile) {

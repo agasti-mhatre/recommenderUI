@@ -5,8 +5,9 @@ import android.os.Parcelable;
 
 import androidx.annotation.NonNull;
 
+import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Map;
+import java.util.List;
 
 /**
  * Main data structure used to store the list properties retrieved from the backend.
@@ -15,40 +16,45 @@ import java.util.Map;
  */
 public class ListProperties implements Parcelable {
 
-    private final String listName;
-    private final Map<Integer, String> eatery;
+    private final String name;
+    private final List<String> eatery;
 
     /**
      * Initialize the ListProperties object with information about a specific list.
      *
-     * @param listName - The name of the list's category.
-     * @param eatery - The eatery map represents the position in the list (rank)
-     *               for each eatery that this list contains.
+     * @param name - The name of the list's category.
+     * @param eatery - The rank of each eatery depending on
+     *               its position in the list.
      */
-    public ListProperties(String listName, Map<Integer, String> eatery) {
+    public ListProperties(String name, List<String> eatery) {
 
-        this.listName = listName;
+        this.name = name;
         this.eatery = eatery;
     }
 
     /**
      * Return the name of the list's category.
      *
-     * @return listName
+     * @return listName - The name of the list.
      */
     public String getListName() {
-        return listName;
+        return name;
     }
 
     /**
-     * Return the map that contains the position (Integer)
-     * and the eatery for each eatery contained within
-     * this list.
+     * Return the list that contains the
+     * eatery for each eatery contained
+     * within this list.
      *
-     * @return eatery - The map containing position and eatery information for each eatery.
+     * @return eatery - The name of the eatery.
      */
-    public Map<Integer, String> getEatery() {
-        return eatery;
+    public String getEatery(int i) {
+        return eatery.get(i);
+    }
+
+    public int size() {
+
+        return eatery.size();
     }
 
     /**
@@ -59,13 +65,11 @@ public class ListProperties implements Parcelable {
      *           reinitialize its objects.
      */
     protected ListProperties(Parcel in) {
-        listName = in.readString();
 
-        int numMaps = in.readInt();
-        this.eatery = new HashMap<Integer, String>();
-        for (int i = 0; i < numMaps; i += 1) {
-            eatery.put(i, in.readString());
-        }
+        name = in.readString();
+
+        this.eatery = new ArrayList<>();
+        in.readList(this.eatery, String.class.getClassLoader());
     }
 
     /**
@@ -91,12 +95,7 @@ public class ListProperties implements Parcelable {
     @Override
     public void writeToParcel(@NonNull Parcel dest, int flags) {
 
-        dest.writeString(listName);
-
-        int numMaps = eatery.size();
-        dest.writeInt(numMaps);
-        for (int i = 0; i < numMaps; i += 1) {
-            dest.writeString(eatery.get(i));
-        }
+        dest.writeString(name);
+        dest.writeList(eatery);
     }
 }

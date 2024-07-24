@@ -1,21 +1,17 @@
 package recommender.recommenderui.controller.backend;
 
-import java.util.Map;
-
 /**
  * Connect to the backend server and retrieve all lists and their data
  * pertaining to the current user.
  *
- * @param <T> The key used to access the uth list
- * @param <U> A data structure representing a single lists data
+ * @param <T> The list of lists
  */
-public interface ListRetrievalController<T, U> {
+public interface ListRetrievalController<T> {
 
     /**
      * Return the list information for each list.
      *
-     * @return listMap. T represents the position of each list within the view,
-     * U represents the list information.
+     * @return T
      */
-    public Map<T, U> getLists();
+    public T getLists();
 }

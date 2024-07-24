@@ -1,7 +1,5 @@
 package recommender.recommenderui.controller.view;
 
-import java.util.Map;
-
 /**
  * Use this controller to communicate with the backend controller.
  * This controller is responsible for passing information from
@@ -10,9 +8,8 @@ import java.util.Map;
  * to decouple the two.
  *
  * @param <T>
- * @param <U>
  */
-public interface ViewController<T, U> {
+public interface ViewController<T> {
 
-    public Map<T, U> getLists();
+    public T getLists();
 }

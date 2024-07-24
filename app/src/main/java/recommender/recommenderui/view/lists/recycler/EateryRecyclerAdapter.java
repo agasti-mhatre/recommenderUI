@@ -38,11 +38,11 @@ public class EateryRecyclerAdapter extends RecyclerView.Adapter<EateryHolder>{
 
     @Override
     public void onBindViewHolder(@NonNull EateryHolder holder, int position) {
-        holder.setRestaurantName(listProperties.getEatery().get(position));
+        holder.setRestaurantName(listProperties.getEatery(position));
     }
 
     @Override
     public int getItemCount() {
-        return listProperties.getEatery().size();
+        return listProperties.size();
     }
 }

@@ -14,6 +14,11 @@ public class GetConnection {
         return getEndpoint("/newAccount");
     }
 
+    public String getLists() {
+
+        return getEndpoint("/getLists");
+    }
+
     private String getEndpoint(String endpoint) {
 
         backendConn.append(endpoint);

@@ -14,11 +14,13 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
 import recommender.recommenderui.view.lists.fragments.ListsDisplayFragment;
+import recommender.recommenderui.view.lists.fragments.MyProfileFragment;
 
 
 public class MainActivity extends AppCompatActivity {
 
     private Fragment listsDisplayFragment;
+    private Fragment myProfileFragment;
     private Fragment profileFragment;
     private BottomNavigationView toolbar;
 
@@ -35,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         listsDisplayFragment = new ListsDisplayFragment();
+        myProfileFragment = new MyProfileFragment();
         toolbar = initToolbar(savedInstanceState);
     }
 
@@ -65,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
 
                 } else if (id == R.id.profile) {
 
+                    displayFragment(R.id.fragmentContainerView, myProfileFragment);
                     itemClicked = true;
                 }
 

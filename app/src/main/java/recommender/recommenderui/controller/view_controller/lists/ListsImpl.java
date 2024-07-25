@@ -5,7 +5,7 @@ import java.util.List;
 import recommender.recommenderui.controller.view_controller.list_properties.ListPropertiesImpl;
 
 
-public class ListsImpl implements Lists<ListPropertiesImpl> {
+public class ListsImpl implements Lists {
 
     public List<ListPropertiesImpl> lists;
 

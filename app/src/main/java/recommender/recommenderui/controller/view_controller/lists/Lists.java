@@ -1,8 +1,10 @@
 package recommender.recommenderui.controller.view_controller.lists;
 
-public interface Lists<T> {
+import recommender.recommenderui.controller.view_controller.list_properties.ListProperties;
 
-    public T getList(int i);
+public interface Lists {
+
+    public ListProperties getList(int i);
     public int size();
 
 }

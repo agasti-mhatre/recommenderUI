@@ -9,6 +9,7 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.fragment.app.Fragment;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarView;
 
 import recommender.recommenderui.view.lists.fragments.ListsDisplayFragment;
 import recommender.recommenderui.view.lists.fragments.MyProfileFragment;
@@ -17,8 +18,8 @@ import recommender.recommenderui.view.lists.listeners.BottomNavBarListener;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Fragment listsDisplayFragment;
-    private Fragment myProfileFragment;
+
+    private NavigationBarView.OnItemSelectedListener bottomNavBarListener;
     private BottomNavigationView toolbar;
 
     @Override
@@ -34,8 +35,7 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
-        listsDisplayFragment = new ListsDisplayFragment();
-        myProfileFragment = new MyProfileFragment();
+        bottomNavBarListener = new BottomNavBarListener(getSupportFragmentManager());
         toolbar = initToolbar(savedInstanceState);
     }
 
@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
 
         BottomNavigationView tempToolBar = findViewById(R.id.toolbar);
 
-        tempToolBar.setOnItemSelectedListener(new BottomNavBarListener(getSupportFragmentManager()));
+        tempToolBar.setOnItemSelectedListener(bottomNavBarListener);
 
         if (savedInstanceState == null) {
             tempToolBar.setSelectedItemId(R.id.yourLists);

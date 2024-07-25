@@ -1,6 +1,7 @@
 package recommender.recommenderui.view.lists.activity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 
@@ -33,6 +34,8 @@ public class ListContentActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        Log.v("ListContentActivity", this.getClass().getName());
 
         backButton = setBackButton();
 

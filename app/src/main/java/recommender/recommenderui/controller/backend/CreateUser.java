@@ -7,6 +7,7 @@ import androidx.annotation.NonNull;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.List;
 
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -18,7 +19,9 @@ public class CreateUser {
 
     private CreateUser () {}
 
-    public static void createAccount(String firstName, String lastName, String email, File currFileDirectory) {
+    public static void createAccount(File currFileDirectory, String email) {
+
+        // Send email through request, use email to create tokens
 
         Runnable tempRunnable = createRunnable(currFileDirectory);
 

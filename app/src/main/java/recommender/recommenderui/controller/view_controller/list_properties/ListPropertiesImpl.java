@@ -1,4 +1,4 @@
-package recommender.recommenderui.controller.view;
+package recommender.recommenderui.controller.view_controller.list_properties;
 
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -6,7 +6,6 @@ import android.os.Parcelable;
 import androidx.annotation.NonNull;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -14,7 +13,7 @@ import java.util.List;
  * JSON data will be parsed into this data structure. Ultimately, this data structure
  * is a parcelable because it may be passed from to an activity/fragment via an intent.
  */
-public class ListProperties implements Parcelable {
+public class ListPropertiesImpl implements ListProperties {
 
     private final String name;
     private final List<String> eatery;
@@ -26,7 +25,7 @@ public class ListProperties implements Parcelable {
      * @param eatery - The rank of each eatery depending on
      *               its position in the list.
      */
-    public ListProperties(String name, List<String> eatery) {
+    public ListPropertiesImpl(String name, List<String> eatery) {
 
         this.name = name;
         this.eatery = eatery;
@@ -37,6 +36,7 @@ public class ListProperties implements Parcelable {
      *
      * @return listName - The name of the list.
      */
+    @Override
     public String getListName() {
         return name;
     }
@@ -48,10 +48,12 @@ public class ListProperties implements Parcelable {
      *
      * @return eatery - The name of the eatery.
      */
+    @Override
     public String getEatery(int i) {
         return eatery.get(i);
     }
 
+    @Override
     public int size() {
 
         return eatery.size();
@@ -64,7 +66,7 @@ public class ListProperties implements Parcelable {
      * @param in - The parcel that ListProperties receives in order to
      *           reinitialize its objects.
      */
-    protected ListProperties(Parcel in) {
+    protected ListPropertiesImpl(Parcel in) {
 
         name = in.readString();
 
@@ -73,17 +75,17 @@ public class ListProperties implements Parcelable {
     }
 
     /**
-     * Comes as part of the Parcelable class.
+     * Comes as part of the Parcelable interface.
      */
-    public static final Creator<ListProperties> CREATOR = new Creator<ListProperties>() {
+    public static final Creator<ListPropertiesImpl> CREATOR = new Creator<ListPropertiesImpl>() {
         @Override
-        public ListProperties createFromParcel(Parcel in) {
-            return new ListProperties(in);
+        public ListPropertiesImpl createFromParcel(Parcel in) {
+            return new ListPropertiesImpl(in);
         }
 
         @Override
-        public ListProperties[] newArray(int size) {
-            return new ListProperties[size];
+        public ListPropertiesImpl[] newArray(int size) {
+            return new ListPropertiesImpl[size];
         }
     };
 

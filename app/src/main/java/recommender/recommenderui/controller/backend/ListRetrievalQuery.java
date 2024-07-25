@@ -15,14 +15,14 @@ import okhttp3.Callback;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
-import recommender.recommenderui.controller.view.Lists;
+import recommender.recommenderui.controller.view_controller.lists.ListsImpl;
 
-public class ListRetrievalQuery implements ListRetrievalController<Lists> {
+public class ListRetrievalQuery implements ListRetrievalController<ListsImpl> {
 
-    private Lists lists;
+    private ListsImpl lists;
 
     @Override
-    public Lists getLists() {
+    public ListsImpl getLists() {
 
         CountDownLatch latch = new CountDownLatch(1);
         Runnable sendRequest = createRunnable(latch);
@@ -75,7 +75,7 @@ public class ListRetrievalQuery implements ListRetrievalController<Lists> {
 
                 String responseBody = response.body().string();
 
-                lists = (new Gson()).fromJson(responseBody, Lists.class);
+                lists = (new Gson()).fromJson(responseBody, ListsImpl.class);
                 latch.countDown();
             }
         };

@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import recommender.recommenderui.R;
-import recommender.recommenderui.controller.view.ListProperties;
+import recommender.recommenderui.controller.view_controller.list_properties.ListPropertiesImpl;
 import recommender.recommenderui.view.lists.recycler.EateryRecyclerAdapter;
 
 /**
@@ -52,7 +52,7 @@ public class ListContentActivity extends AppCompatActivity {
         return temp;
     }
 
-    private RecyclerView setEateryList(ListProperties listProperties) {
+    private RecyclerView setEateryList(ListPropertiesImpl listProperties) {
 
         RecyclerView temp = findViewById(R.id.eateryRank);
 

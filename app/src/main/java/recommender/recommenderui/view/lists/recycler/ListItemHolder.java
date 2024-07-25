@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import recommender.recommenderui.MainActivity;
 import recommender.recommenderui.R;
-import recommender.recommenderui.controller.view.ListProperties;
+import recommender.recommenderui.controller.view_controller.list_properties.ListProperties;
 import recommender.recommenderui.view.lists.activity.ListContentActivity;
 
 /**

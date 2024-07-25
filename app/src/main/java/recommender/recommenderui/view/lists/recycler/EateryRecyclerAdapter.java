@@ -7,7 +7,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import recommender.recommenderui.R;
-import recommender.recommenderui.controller.view.ListProperties;
+import recommender.recommenderui.controller.view_controller.list_properties.ListProperties;
 
 /**
  * Recycler for each list's contents. Each list will contain a number

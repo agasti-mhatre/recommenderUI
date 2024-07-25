@@ -7,14 +7,14 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import recommender.recommenderui.R;
-import recommender.recommenderui.controller.view.Lists;
+import recommender.recommenderui.controller.view_controller.lists.ListsImpl;
 
 /**
  * Used to display all of the lists created and saved by the user.
  */
 public class ListRecyclerAdapter extends RecyclerView.Adapter<ListItemHolder> {
 
-    private final Lists lists;
+    private final ListsImpl lists;
 
     /**
      * Initialize the recycler view with all of the lists that need
@@ -23,7 +23,7 @@ public class ListRecyclerAdapter extends RecyclerView.Adapter<ListItemHolder> {
      * @param lists - The position (Integer) and list contents for
      *                 each list.
      */
-    public ListRecyclerAdapter(Lists lists) {
+    public ListRecyclerAdapter(ListsImpl lists) {
         this.lists = lists;
     }
 

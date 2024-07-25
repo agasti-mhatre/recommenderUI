@@ -1,4 +1,4 @@
-package recommender.recommenderui.controller.view;
+package recommender.recommenderui.controller.view_controller.get_list_properties;
 
 /**
  * Use this controller to communicate with the backend controller.
@@ -9,7 +9,7 @@ package recommender.recommenderui.controller.view;
  *
  * @param <T>
  */
-public interface ViewController<T> {
+public interface GetListProperties<T> {
 
     public T getLists();
 }

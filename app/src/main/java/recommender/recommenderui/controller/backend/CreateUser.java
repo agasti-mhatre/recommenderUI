@@ -4,6 +4,7 @@ import java.io.File;
 
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
+import recommender.recommenderui.controller.backend.getters.GetConnection;
 import recommender.recommenderui.controller.backend.runnables.CreateUserRunnable;
 
 public class CreateUser {

@@ -1,4 +1,4 @@
-package recommender.recommenderui.controller.backend;
+package recommender.recommenderui.controller.backend.getters;
 
 public class GetConnection {
 

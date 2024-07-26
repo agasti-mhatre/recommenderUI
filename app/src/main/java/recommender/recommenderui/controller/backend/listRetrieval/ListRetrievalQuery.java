@@ -1,4 +1,4 @@
-package recommender.recommenderui.controller.backend;
+package recommender.recommenderui.controller.backend.listRetrieval;
 
 import android.util.Log;
 
@@ -15,9 +15,10 @@ import okhttp3.Callback;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
+import recommender.recommenderui.controller.backend.GetConnection;
 import recommender.recommenderui.controller.view_controller.lists.ListsImpl;
 
-public class ListRetrievalQuery implements ListRetrievalController<ListsImpl> {
+public class ListRetrievalQuery implements ListRetrievalController {
 
     private ListsImpl lists;
 

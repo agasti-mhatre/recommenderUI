@@ -1,6 +1,6 @@
 package recommender.recommenderui.controller.view_controller.get_list_properties;
 
-import recommender.recommenderui.controller.backend.ListRetrievalQuery;
+import recommender.recommenderui.controller.backend.listRetrieval.ListRetrievalQuery;
 import recommender.recommenderui.controller.view_controller.lists.ListsImpl;
 
 /**

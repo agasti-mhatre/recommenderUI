@@ -1,12 +1,10 @@
 package recommender.recommenderui.controller.backend;
 
-import android.util.Log;
-
 import java.io.File;
 
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
-import recommender.recommenderui.controller.backend.callbacks.CreateUserCallback;
+import recommender.recommenderui.controller.backend.runnables.CreateUserRunnable;
 
 public class CreateUser {
 
@@ -16,15 +14,6 @@ public class CreateUser {
 
         // Send email through request, use email to create tokens
 
-        Runnable tempRunnable = createRunnable(currFileDirectory);
-
-        Thread tempThread = new Thread(tempRunnable);
-        tempThread.start();
-
-    }
-
-    private static Runnable createRunnable(File currFileDirectory) {
-
         OkHttpClient client = new OkHttpClient();
 
         String accountCreateUrl = new GetConnection().createNewAccount();
@@ -33,13 +22,11 @@ public class CreateUser {
                 .get()
                 .build();
 
-        return new Runnable() {
-            @Override
-            public void run() {
+        Thread tempThread = new Thread(
+                new CreateUserRunnable(client, getAccount, currFileDirectory)
+        );
 
-                client.newCall(getAccount).enqueue(new CreateUserCallback(CreateUser.class.getName(), currFileDirectory));
-            }
-        };
+        tempThread.start();
     }
 
 }

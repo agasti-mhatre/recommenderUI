@@ -2,18 +2,11 @@ package recommender.recommenderui.controller.backend;
 
 import android.util.Log;
 
-import androidx.annotation.NonNull;
-
 import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.List;
 
-import okhttp3.Call;
-import okhttp3.Callback;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
-import okhttp3.Response;
+import recommender.recommenderui.controller.backend.callbacks.CreateUserCallback;
 
 public class CreateUser {
 
@@ -40,38 +33,11 @@ public class CreateUser {
                 .get()
                 .build();
 
-        File tokenFile = new File(currFileDirectory, GetSystemFile.tokenFile());
         return new Runnable() {
             @Override
             public void run() {
 
-                client.newCall(getAccount).enqueue(getCallback(tokenFile));
-            }
-        };
-    }
-
-    private static Callback getCallback(File tokenFile) {
-
-        return new Callback() {
-            @Override
-            public void onFailure(@NonNull Call call, @NonNull IOException e) {
-
-                Log.v("Get Request failed", e.getMessage());
-            }
-
-            @Override
-            public void onResponse(@NonNull Call call, @NonNull Response response) throws IOException {
-
-                try {
-
-                    FileWriter tokenFileWriter = new FileWriter(tokenFile);
-                    tokenFileWriter.write(response.body().string());
-                    tokenFileWriter.close();
-                }
-                catch (IOException e) {
-
-                    Log.v("File writing failed.", e.toString());
-                }
+                client.newCall(getAccount).enqueue(new CreateUserCallback(CreateUser.class.getName(), currFileDirectory));
             }
         };
     }

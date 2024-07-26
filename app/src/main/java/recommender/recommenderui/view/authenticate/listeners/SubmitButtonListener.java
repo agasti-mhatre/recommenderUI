@@ -19,8 +19,6 @@ public class SubmitButtonListener implements View.OnClickListener {
 
     public SubmitButtonListener(AppCompatActivity newAccount) {
 
-        // Do input validation for all of the text fields
-
         this.newAccount = newAccount;
         firstName = newAccount.findViewById(R.id.firstNameInputEditText);
         lastName = newAccount.findViewById(R.id.lastNameInputEditText);
@@ -29,6 +27,8 @@ public class SubmitButtonListener implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
+
+        // Do input validation for all of the text fields
 
         CreateUser.createAccount(newAccount.getFilesDir(), email.getText().toString());
     }

@@ -38,6 +38,7 @@ dependencies {
     implementation(libs.okhttp)
     implementation(libs.realm.gradle.plugin)
     implementation(libs.gson)
+    implementation(libs.apollo)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)

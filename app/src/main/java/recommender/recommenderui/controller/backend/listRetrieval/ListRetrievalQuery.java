@@ -8,6 +8,7 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import recommender.recommenderui.controller.backend.getters.GetConnection;
 import recommender.recommenderui.controller.backend.callbacks.ListRetreivalCallback;
+import recommender.recommenderui.controller.backend.getters.RequestGenerator;
 import recommender.recommenderui.controller.backend.runnables.ListRetrievalRunnable;
 import recommender.recommenderui.controller.view_controller.lists.ListsImpl;
 
@@ -25,12 +26,12 @@ public class ListRetrievalQuery implements ListRetrievalController {
 
         OkHttpClient client = new OkHttpClient();
         String listRetrievalUrl = new GetConnection().getLists();
-        Request getListReq = new Request.Builder()
-                .url(listRetrievalUrl)
-                .get()
-                .build();
+        Request getListReq = RequestGenerator.getRequest(listRetrievalUrl);
 
-        Thread requestThread = new Thread(new ListRetrievalRunnable(client, getListReq, listRetreivalCallback));
+        Thread requestThread = new Thread(
+                new ListRetrievalRunnable(client, getListReq, listRetreivalCallback)
+        );
+
         requestThread.start();
 
         try {

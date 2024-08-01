@@ -33,10 +33,10 @@ public class Authenticator extends AppCompatActivity {
         createAccount = initCreateAccount();
 
         // Change this with a check: If the user has a valid token, proceed to Main, otherwise remain on authentication page
-        if(true) {
+        //if(true) {
 
-            startActivity(new Intent(Authenticator.this, MainActivity.class));
-        }
+        //    startActivity(new Intent(Authenticator.this, MainActivity.class));
+        //}
     }
 
     private TextView initCreateAccount() {

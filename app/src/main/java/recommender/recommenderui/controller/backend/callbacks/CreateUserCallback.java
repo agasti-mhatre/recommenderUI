@@ -43,7 +43,6 @@ public class CreateUserCallback implements Callback {
 
             Log.v(failMessage, e.toString());
         }
-
     }
 
     private String createFailMessage(String callingClassName) {

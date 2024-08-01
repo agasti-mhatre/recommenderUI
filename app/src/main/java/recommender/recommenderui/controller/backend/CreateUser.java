@@ -5,6 +5,7 @@ import java.io.File;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import recommender.recommenderui.controller.backend.getters.GetConnection;
+import recommender.recommenderui.controller.backend.getters.RequestGenerator;
 import recommender.recommenderui.controller.backend.runnables.CreateUserRunnable;
 
 public class CreateUser {
@@ -18,10 +19,7 @@ public class CreateUser {
         OkHttpClient client = new OkHttpClient();
 
         String accountCreateUrl = new GetConnection().createNewAccount();
-        Request getAccount = new Request.Builder()
-                .url(accountCreateUrl)
-                .get()
-                .build();
+        Request getAccount = RequestGenerator.getRequest(accountCreateUrl);
 
         Thread tempThread = new Thread(
                 new CreateUserRunnable(client, getAccount, currFileDirectory)

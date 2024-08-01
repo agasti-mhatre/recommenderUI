@@ -14,7 +14,6 @@ import recommender.recommenderui.controller.view_controller.lists.ListsImpl;
 
 public class ListRetrievalQuery implements ListRetrievalController {
 
-    private ListsImpl lists;
     private ListRetreivalCallback listRetreivalCallback;
 
     @Override

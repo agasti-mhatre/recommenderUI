@@ -1,0 +1,6 @@
+query GetExample {
+  exampleField {
+    id
+    name
+  }
+}

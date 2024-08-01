@@ -1,0 +1,8 @@
+type ExampleField {
+    id: ID!
+    name: String!
+}
+
+type Query {
+    exampleField: ExampleField
+}

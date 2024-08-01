@@ -11,6 +11,7 @@ okhttp = "4.12.0"
 realmGradlePlugin = "10.18.0"
 gson = "2.9.1"
 apollo = "3.8.5"
+apolloPlug = "3.8.5"
 
 [libraries]
 junit = { group = "junit", name = "junit", version.ref = "junit" }
@@ -24,7 +25,7 @@ okhttp = { group = "com.squareup.okhttp3", name = "okhttp", version.ref = "okhtt
 realm-gradle-plugin = { module = "io.realm:realm-gradle-plugin", version.ref = "realmGradlePlugin" }
 gson = { module = "com.google.code.gson:gson", version.ref = "gson" }
 apollo = { group = "com.apollographql.apollo3", name = "apollo-runtime", version.ref = "apollo" }
+apollo-plugin = { module = "com.apollographql.apollo3:apollo-gradle-plugin", version.ref = "apolloPlug" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
-

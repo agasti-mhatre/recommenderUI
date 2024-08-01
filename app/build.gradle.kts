@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     id("realm-android")
+    id("com.apollographql.apollo3")
 }
 
 android {
@@ -42,4 +43,11 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
+}
+
+apollo {
+    service("service") {
+        packageName.set("recommender.recommenderui.controller.backend.graphqlFiles.storage")
+
+    }
 }
